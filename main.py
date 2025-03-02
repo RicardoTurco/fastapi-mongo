@@ -29,5 +29,6 @@ if __name__ == "__main__":
         app="main:get_app",
         host="0.0.0.0",
         port=8081,
+        log_config="log_conf.yaml",
         factory=True,
     )
