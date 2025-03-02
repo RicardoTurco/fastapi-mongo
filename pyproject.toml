@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "fastapi-mongo"
+version = "0.1.0"
+description = ""
+authors = ["RicardoTurco <ricturco@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = {extras = ["all"], version = "^0.112.0"}
+uvicorn = {extras = ["standard"], version = "^0.30.3"}
+gunicorn ="^23.0.0"
+setuptools = "^70.0.0"
+requests = "^2.32.3"
+certifi = "^2024.8.30"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+pytest-asyncio = "^0.24.0"
+webtest = "^3.0.1"
+ipython = "^8.32.0"
+pytest-cov = "^6.0.0"
+black = "^25.1.0"
+isort = "^6.0.0"
+pylint = "^3.3.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+line_length = 79
