@@ -2,6 +2,30 @@
 
 Simple FastAPI application with MongoDB
 
+## Running
+
+To run application locally:
+
+```
+a) Clone this project in your machine
+
+
+b) To run / up application:
+
+docker compose up
+
+
+c) Access documentation/swagger of application:
+
+http://0.0.0.0:8081/docs (on your browser)
+
+
+d) To stop / down application:
+
+CTRL + C
+docker compose down
+```
+
 ## Running (development)
 
 To run application in development time:
