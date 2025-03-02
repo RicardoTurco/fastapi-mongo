@@ -57,6 +57,81 @@ h) To stop / down application:
 CTRL + C
 ```
 
+## Endpoints
+
+The project has the following endpoints:
+
+### - Health Check: application
+
+```
+GET /v1/health-check
+
+Returns the health check of 'application'.
+```
+
+#### Success (200 - OK):
+
+```
+{
+  "application": true   # or False
+}
+```
+
+## Project Structure
+
+Project structure (considering folder start in `fastapi-mongo`):
+
+```
+
+├── fastapi-mongo
+│   ├── app
+│   │   ├── __init__.py
+│   │   ├── routes
+│   │   │    ├── __init__.py
+│   │   │    ├── v1
+│   │   │    │   ├── __init__.py 
+│   │   │    │   ├── health_check.py
+│   ├── tests
+│   │   ├── __init__.py
+│   │   ├── conftest.py
+│   │   ├── routes
+│   │   │    ├── __init__.py
+│   │   │    ├── v1
+│   │   │    │   ├── __init__.py 
+│   │   │    │   ├── test_health_check.py
+├── .gitignore
+├── .pylintrc
+├── LINCESE
+├── log_conf.yaml
+├── main.py
+├── Makefile
+├── poetry.lock
+├── pyproject.toml
+├── README.md
+├── urls.py
+
+```
+
+### Main folders
+
+* `fastapi-mongo` - "Main" folder of project.
+* `app` - All the RESTfull API implementation is here.
+* `app/routes/v1` - "Routes" module of project (v1 endpoints).
+* `tests` - All tests of application.
+
+### Files
+
+* `.gitignore` - Lists files and directories which should not be added to git repository.
+* `.pylintrc` - Define configurations of pylint.
+* `LICENSE` - Definitions of licence of application.
+* `log_conf.yaml` - Configurations about log messages.
+* `main.py` - The Application entrypoint.
+* `Makefile` - Make commands available.
+* `poetry.lock` - Define specific versions of dependencies.
+* `pyproject.toml` - Some configurations of project.
+* `README.md` - Instructions and information to run this project locally.
+* `urls.py` - Declare all resource routes of project.
+
 ## LINTERS
 
 This project has a some LINTERs to mantain the quality of code.
