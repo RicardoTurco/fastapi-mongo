@@ -1,6 +1,8 @@
 services:
   fastapi-mongo:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: fastapi-mongo
     environment:
       API_ENV: testing

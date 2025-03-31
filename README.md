@@ -12,7 +12,10 @@ a) Clone this project in your machine
 
 b) To run / up application:
 
-docker compose up
+docker compose -p fastapi-mongo up -d
+
+OBS: 
+using a '-p' parameter, we can define a specific name of created image.
 
 
 c) Access documentation/swagger of application:
