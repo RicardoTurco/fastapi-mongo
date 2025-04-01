@@ -12,18 +12,28 @@ a) Clone this project in your machine
 
 b) To run / up application:
 
-docker compose -p fastapi-mongo up -d
+docker compose up -d --build
 
 OBS: 
-using a '-p' parameter, we can define a specific name of created image.
+using a '--build' parameter to not pull the image, because it's not exists.
 
 
 c) Access documentation/swagger of application:
 
-http://0.0.0.0:8081/docs (on your browser)
+http://0.0.0.0:8085/docs (on your browser)
 
 
-d) To stop / down application:
+d) To access to 'mongo-express':
+
+http://0.0.0.0:8081/ (on your browser)
+
+
+e) Put credentials:
+
+admin / pass
+
+
+f) To stop / down application:
 
 CTRL + C
 docker compose down
@@ -69,19 +79,39 @@ You can also generate the COVERAGE report of tests:
 - make test-cov-rep
 
 
-f) To run / up application:
+f) To run / up MongoDB:
+
+- remove the 'fastapi-mongo' service from docker-compose file
+- docker compose up -d --build 
+
+OBS: 
+using a '--build' parameter to not pull the image, because it's not exists.
+
+
+g) To run / up application:
 
 - make run
 
 
-g) Access documentation/swagger of application:
+h) Access documentation/swagger of application:
 
-http://0.0.0.0:8081/docs (on your browser)
+http://0.0.0.0:8085/docs (on your browser)
 
 
-h) To stop / down application:
+i) To access to 'mongo-express':
+
+http://0.0.0.0:8081/ (on your browser)
+
+
+j) Put credentials:
+
+admin / pass
+
+
+k) To stop / down application:
 
 CTRL + C
+docker compose down
 ```
 
 ## Endpoints

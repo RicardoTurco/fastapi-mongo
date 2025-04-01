@@ -16,4 +16,4 @@ RUN pip install --upgrade pip && \
     pip install poetry==$POETRY_VERSION && \
     poetry install --no-root
 
-EXPOSE 8080
+EXPOSE 8085
