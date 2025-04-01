@@ -32,7 +32,7 @@ if __name__ == "__main__":
     uvicorn.run(
         app="main:get_app",
         host="0.0.0.0",
-        port=8081,
+        port=8085,
         log_config="log_conf.yaml",
         factory=True,
     )
