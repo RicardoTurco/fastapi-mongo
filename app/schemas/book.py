@@ -1,11 +1,18 @@
-from uuid import UUID
-from pydantic import BaseModel
+from bson import ObjectId
+from pydantic import BaseModel, field_validator
+from typing import Any
 
 
-class BookResponseSchema(BaseModel):
-    id: UUID
+class BooksListSchema(BaseModel):
+    id: str
     name: str
 
+    @classmethod
+    def convert_objectid(cls, v: Any) -> str:
+        """Converte ObjectId do MongoDB para string"""
+        if isinstance(v, ObjectId):
+            return str(v)
+        return v
+
     class Config:
-        json_encoders = {UUID: str}
         from_attributes = True

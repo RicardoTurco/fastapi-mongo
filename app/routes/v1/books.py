@@ -5,7 +5,7 @@ from typing import List
 from app.database.connection import make_conn
 from app.repositories.books import BooksRepository
 from app.services.books_service import BooksService
-from app.schemas.book import BookResponseSchema
+from app.schemas.book import BooksListSchema
 
 logger = logging.getLogger(__name__)
 
@@ -25,7 +25,7 @@ def get_book_service(db=Depends(make_conn)):
     summary="Retrieves all books.",
     description="This endpoint retrieves all books.",
     status_code=status.HTTP_200_OK,
-    response_model=List[BookResponseSchema]
+    response_model=List[BooksListSchema]
 )
 async def all_books(service: BooksService = Depends(get_book_service)):
     books = await service.list_all()

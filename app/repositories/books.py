@@ -10,9 +10,9 @@ class BooksRepository:
 
     async def list_all(self, filters: Dict, return_options: Dict) -> List[Dict]:
         collection = self.__db_connection.get_collection(self.__collection_name)
-        data = collection.find(
+        books = collection.find(
             filters,
             return_options
-        )
-        response = list(data)
-        return response
+        ).to_list()
+        books = [{**book, "id": str(book.pop("_id"))} for book in books]
+        return books
