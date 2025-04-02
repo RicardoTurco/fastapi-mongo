@@ -7,11 +7,12 @@ class DBConnectionHandler:
     class DBConnectionHandler
     """
     def __init__(self) -> None:
-        self.__connection_string = "mongodb://{}:{}@{}:{}/?authSource=admin".format(
-            settings.USERNAME,
+        self.__connection_string = "mongodb://{}:{}@{}:{}/?authSource={}".format(
+            settings.NAME_USER,
             settings.PASSWORD,
             settings.HOST,
-            settings.PORT
+            settings.PORT,
+            settings.DB_NAME
         )
         self.__database_name = settings.DB_NAME
         self.__client = None

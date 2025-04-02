@@ -14,7 +14,7 @@ class Settings(BaseSettings):
 
     HOST: str = "localhost"
     PORT: str = "27017"
-    USERNAME: str = "admin"
+    NAME_USER: str = "admin"
     PASSWORD: str = "pass"
     DB_NAME: str = "fastapi-mongo"
     BOOK_COLLECTION: str = "my-books"
