@@ -143,11 +143,28 @@ Project structure (considering folder start in `fastapi-mongo`):
 ├── fastapi-mongo
 │   ├── app
 │   │   ├── __init__.py
+│   │   ├── database
+│   │   │    ├── __init__.py
+│   │   │    ├── connection.py
+│   │   ├── models
+│   │   │    ├── __init__.py
+│   │   │    ├── book.py
+│   │   ├── repositories
+│   │   │    ├── __init__.py
+│   │   │    ├── books.py
 │   │   ├── routes
 │   │   │    ├── __init__.py
 │   │   │    ├── v1
 │   │   │    │   ├── __init__.py 
 │   │   │    │   ├── health_check.py
+│   │   ├── schemas
+│   │   │    ├── __init__.py
+│   │   │    ├── book.py
+│   │   ├── services
+│   │   │    ├── __init__.py
+│   │   │    ├── book_service.py
+│   ├── init-scripts
+│   │   ├── init.js
 │   ├── tests
 │   │   ├── __init__.py
 │   │   ├── conftest.py
@@ -158,6 +175,10 @@ Project structure (considering folder start in `fastapi-mongo`):
 │   │   │    │   ├── test_health_check.py
 ├── .gitignore
 ├── .pylintrc
+├── config.py
+├── docker-compose.yaml
+├── Dockerfile
+├── env-example
 ├── LINCESE
 ├── log_conf.yaml
 ├── main.py
@@ -173,13 +194,23 @@ Project structure (considering folder start in `fastapi-mongo`):
 
 * `fastapi-mongo` - "Main" folder of project.
 * `app` - All the RESTfull API implementation is here.
+* `app/database` - Contains the classes and methods for connecting to DB.
+* `app/models` - Models of project.
+* `app/repositories` - Repositories of project.
 * `app/routes/v1` - "Routes" module of project (v1 endpoints).
+* `app/schemas` - Schemas of project.
+* `app/services` - Services of project.
+* `init-scripts` - Scripts that running when the docker compose file execute.
 * `tests` - All tests of application.
 
 ### Files
 
 * `.gitignore` - Lists files and directories which should not be added to git repository.
 * `.pylintrc` - Define configurations of pylint.
+* `config.py` - Load environment variables from '.env' file.
+* `docker-compose.yaml` - Create container from application and DB.
+* `Dockerfile` - Create image from application to be used in 'docker-compose' file.
+* `env-example` - Template to create '.env' file.
 * `LICENSE` - Definitions of licence of application.
 * `log_conf.yaml` - Configurations about log messages.
 * `main.py` - The Application entrypoint.
