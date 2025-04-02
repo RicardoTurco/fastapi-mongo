@@ -17,6 +17,7 @@ class Settings(BaseSettings):
     USERNAME: str = "admin"
     PASSWORD: str = "pass"
     DB_NAME: str = "fastapi-mongo"
+    BOOK_COLLECTION: str = "my-books"
 
     class Config:
         """
